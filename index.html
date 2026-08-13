@@ -1,109 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Para Eduarda ❤️</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <!-- BOTÃO TELA CHEIA -->
+<button id="fullscreenBtn" class="fullscreen-btn" onclick="alternarTelaCheia()">
+    ⛶
+</button>
 
-    <button id="fullscreenBtn" class="fullscreen-btn">
-        ⛶
-    </button>
+    <!-- Corações de fundo -->
+    <div class="hearts"></div>
 
+    <!-- Música opcional
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+    -->
 
-    <!-- ==========================================
-         TELA DA GALERIA
-    =========================================== -->
+    <!-- TELA INICIAL -->
+    <section id="inicio" class="tela ativa">
 
-    <main id="galeria" class="galeria">
+        <div class="conteudo">
 
-        <div class="titulo">
+            <div class="coracao-grande">❤️</div>
 
-            <span>❤️</span>
+            <h1>Eduarda...</h1>
 
-            <h1>
-                Alguns momentos nossos
-            </h1>
-
-            <p>
-                Cada foto guarda uma lembrança especial.
+            <p class="subtitulo">
+                Eu preparei uma pequena surpresa para você.
             </p>
 
-        </div>
+            <p class="texto-suave">
+                Antes de continuar, quero que você leia tudo com carinho.
+            </p>
 
-
-        <!-- ======================================
-             10 FOTOS
-        ======================================= -->
-
-        <div class="fotos">
-
-            <div class="foto">
-                <img src="fotos/foto1.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto2.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto3.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto4.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto5.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto6.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto7.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto8.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto9.jpeg">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/foto10.jpeg">
-            </div>
+            <button class="botao" onclick="comecar()">
+                Abrir surpresa 💌
+            </button>
 
         </div>
 
-    </main>
+    </section>
 
 
-    <!-- ==========================================
-         FOTO EM TELA CHEIA
-    =========================================== -->
+    <!-- CARTA -->
+    <section id="carta" class="tela">
 
-    <section id="fotoFullscreen" class="foto-fullscreen">
+        <div class="carta">
 
-        <img id="imagemGrande" src="" alt="Foto">
+            <div class="envelope">💌</div>
 
-        <div class="coracao">
-            ❤️
+            <h2>Uma coisa que eu queria te dizer...</h2>
+
+            <p id="textoCarta"></p>
+
+            <button class="botao escondido" id="botaoCarta" onclick="mostrarFotos()">
+                Quero continuar ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOTOS -->
+    <section id="fotos" class="tela">
+
+        <div class="galeria-container">
+
+            <h2>Alguns momentos que guardo comigo ❤️</h2>
+
+            <p class="descricao">
+                Cada uma dessas fotos guarda um momento especial.
+            </p>
+
+            <div class="galeria">
+
+                <div class="foto">
+                    <img src="fotos/foto1.jpeg" alt="Nosso momento 1">
+                    <span>Um momento que eu nunca quero esquecer. ❤️</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto2.jpeg" alt="Nosso momento 2">
+                    <span>Porque estar com você sempre torna tudo melhor.</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto3.jpeg" alt="Nosso momento 3">
+                    <span>Um sorriso seu consegue mudar meu dia. 🥰</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto4.jpeg" alt="Nosso momento 4">
+                    <span>Mais uma lembrança que significa muito para mim.</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto5.jpeg" alt="Nosso momento 5">
+                    <span>Alguns momentos simplesmente ficam no coração.</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto6.jpeg" alt="Nosso momento 6">
+                    <span>E eu espero que ainda tenhamos muitos outros.</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto7.jpeg" alt="Nosso momento 7">
+                    <span>Você tornou momentos simples em momentos especiais.</span>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/foto8.jpeg" alt="Nosso momento 8">
+                    <span>E talvez essa seja só o começo da nossa história. ❤️</span>
+                </div>
+
+            </div>
+
+            <button class="botao" onclick="mostrarPedido()">
+                Tenho uma última coisa para te perguntar... 💕
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PEDIDO -->
+    <section id="pedido" class="tela">
+
+        <div class="pedido-container">
+
+            <div class="anel">💍</div>
+
+            <p class="pequeno">
+                Eduarda, depois de tudo isso...
+            </p>
+
+            <h1>
+                Você quer<br>
+                namorar comigo?
+            </h1>
+
+            <p class="mensagem-final">
+                Eu não sei exatamente o que o futuro reserva,
+                mas sei que gostaria muito de descobrir isso
+                ao seu lado.
+            </p>
+
+            <div class="botoes">
+
+                <button id="sim" class="botao-sim" onclick="aceitou()">
+                    SIM! ❤️
+                </button>
+
+                <button id="nao" class="botao-nao">
+                    Não 😢
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESPOSTA SIM -->
+    <section id="final" class="tela">
+
+        <div class="final-container">
+
+            <div class="coracoes-final">
+                ❤️ 💕 ❤️
+            </div>
+
+            <h1>
+                EU SABIA! ❤️
+            </h1>
+
+            <h2>
+                Agora é oficial, Eduarda. 💍
+            </h2>
+
+            <p>
+                Obrigado por escolher viver essa história comigo.
+            </p>
+
+            <p class="frase-final">
+                Que esse seja apenas o primeiro capítulo
+                de muitos momentos lindos que ainda vamos viver.
+            </p>
+
+            <div class="grande-coracao">
+                ❤️
+            </div>
+
         </div>
 
     </section>
@@ -112,5 +211,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
