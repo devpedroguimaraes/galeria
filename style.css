@@ -1,0 +1,706 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #9b0b2b 0%,
+            #71051e 40%,
+            #4a0012 100%
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+}
+
+
+/* =====================================================
+   BORDA DOURADA EXTERNA
+===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    border: 1px solid #d4af37;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+
+/* =====================================================
+   BOTÃO TELA CHEIA
+===================================================== */
+
+.fullscreen-btn {
+    position: fixed;
+
+    top: 24px;
+    right: 26px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #d4af37;
+
+    background: rgba(70, 0, 18, 0.8);
+
+    color: #f5d77a;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    transition: all 0.3s ease;
+}
+
+.fullscreen-btn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+
+/* =====================================================
+   GALERIA
+===================================================== */
+
+.galeria {
+    position: fixed;
+
+    /*
+       Área exatamente dentro
+       da borda dourada
+    */
+
+    top: 13px;
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding: 28px 45px 18px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.titulo {
+    width: 100%;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    margin-bottom: 12px;
+}
+
+
+/* CORAÇÃO ACIMA DO TÍTULO */
+
+.titulo span {
+    display: block;
+
+    width: 100%;
+
+    height: 28px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 26px;
+
+    line-height: 28px;
+
+    text-align: center;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.titulo h1 {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(32px, 5vh, 48px);
+
+    font-weight: bold;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    color: #f5d77a;
+
+    text-shadow:
+        0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+
+/* SUBTÍTULO */
+
+.titulo p {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   ÁREA DAS FOTOS
+===================================================== */
+
+.fotos {
+    width: 100%;
+
+    max-width: 990px;
+
+    /*
+       Ocupa todo o espaço restante
+    */
+
+    flex: 1;
+
+    min-height: 0;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    grid-template-rows:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARTÃO DA FOTO
+===================================================== */
+
+.foto {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 4px;
+
+    background: #ffffff;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.45),
+        0 0 8px rgba(212, 175, 55, 0.2);
+
+    animation:
+        flutuar 4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   ANIMAÇÃO DAS FOTOS
+===================================================== */
+
+.foto:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.foto:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.foto:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.foto:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.foto:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.foto:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.foto:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+.foto:nth-child(8) {
+    animation-delay: 1.4s;
+}
+
+.foto:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+.foto:nth-child(10) {
+    animation-delay: 1.8s;
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =====================================================
+   IMAGENS
+===================================================== */
+
+.foto img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   FOTO EM TELA CHEIA
+===================================================== */
+
+.foto-fullscreen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #8d0928 0%,
+            #5a0018 50%,
+            #32000d 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 5000;
+
+    overflow: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+
+/* =====================================================
+   BORDA DA FOTO EM TELA CHEIA
+===================================================== */
+
+.foto-fullscreen::before {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    border: 1px solid #d4af37;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   IMAGEM GRANDE
+===================================================== */
+
+.foto-fullscreen img {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 35px 55px;
+
+    opacity: 0;
+
+    transform: scale(0.94);
+
+    transition:
+        opacity 0.8s ease,
+        transform 1s ease;
+}
+
+
+/* =====================================================
+   TELA CHEIA ATIVA
+===================================================== */
+
+.foto-fullscreen.ativa {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.foto-fullscreen.ativa img {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   CORAÇÃO DA FOTO GRANDE
+===================================================== */
+
+.coracao {
+    position: absolute;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 3;
+
+    font-size: 28px;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(212, 175, 55, 0.7)
+        );
+
+    animation:
+        pulsar 1.5s ease-in-out infinite;
+}
+
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   TABLET / NOTEBOOK EM PAISAGEM
+===================================================== */
+
+@media
+screen and
+(min-width: 800px)
+and
+(orientation: landscape) {
+
+    .galeria {
+        padding:
+            25px 40px 18px;
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+    }
+
+    .titulo span {
+        height: 24px;
+
+        font-size: 23px;
+
+        line-height: 24px;
+    }
+
+    .titulo h1 {
+        font-size: 38px;
+
+        line-height: 1;
+    }
+
+    .titulo p {
+        margin-top: 4px;
+
+        font-size: 11px;
+    }
+
+    .fotos {
+        max-width: 990px;
+
+        gap: 8px;
+    }
+
+    .foto {
+        padding: 3px;
+
+        border-width: 2px;
+    }
+}
+
+
+/* =====================================================
+   TABLET RETRATO
+===================================================== */
+
+@media
+screen and
+(min-width: 600px)
+and
+(max-width: 799px) {
+
+    .galeria {
+        padding:
+            30px 25px 18px;
+    }
+
+    .titulo h1 {
+        font-size: 34px;
+
+        white-space: normal;
+    }
+
+    .fotos {
+        max-width: 600px;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-rows:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media
+screen and
+(max-width: 599px) {
+
+    .galeria {
+        padding:
+            35px 18px 15px;
+    }
+
+    .titulo span {
+        height: 22px;
+
+        font-size: 21px;
+
+        line-height: 22px;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+
+        white-space: normal;
+    }
+
+    .titulo p {
+        font-size: 10px;
+    }
+
+    .fotos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-rows:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    .foto {
+        padding: 3px;
+    }
+
+    .fullscreen-btn {
+        width: 40px;
+        height: 40px;
+
+        top: 20px;
+        right: 20px;
+
+        font-size: 20px;
+    }
+
+    .foto-fullscreen img {
+        padding: 20px;
+    }
+}
+
+
+/* =====================================================
+   TELAS COM POUCA ALTURA
+===================================================== */
+
+@media
+screen and
+(max-height: 650px) {
+
+    .galeria {
+        padding:
+            18px 35px 12px;
+    }
+
+    .titulo {
+        margin-bottom: 6px;
+    }
+
+    .titulo span {
+        height: 18px;
+
+        font-size: 18px;
+
+        line-height: 18px;
+    }
+
+    .titulo h1 {
+        font-size: 30px;
+
+        line-height: 1;
+    }
+
+    .titulo p {
+        margin-top: 3px;
+
+        font-size: 9px;
+    }
+
+    .fotos {
+        gap: 6px;
+    }
+
+    .foto {
+        padding: 2px;
+    }
+}
